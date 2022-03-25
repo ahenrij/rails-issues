@@ -40,8 +40,8 @@ def extract(owner:str="rails", repo:str="rails", nb:int=500) -> list:
         # raise exception on result error
         if result.status_code != http.HTTPStatus.OK:
             result.raise_for_status()
-        # append response content to issues
-        issues.append(json.loads(result.text))
+        # concatenate response content to issues
+        issues += json.loads(result.text)
     
     with open(EXPORT_FILE_PATH, 'wb') as f:
         pickle.dump(issues, f, protocol=pickle.HIGHEST_PROTOCOL)
