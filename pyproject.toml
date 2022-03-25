@@ -9,6 +9,7 @@ authors = ["Henri Aïdasso <ahenrij@gmail.com>"]
 python = "^3.8"
 pandas = "numpy"
 seaborn = "^0.11.2"
+matplotlib = "^3.5.1"
 
 [tool.poetry.dev-dependencies]
 
