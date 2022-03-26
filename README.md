@@ -12,8 +12,8 @@ $ poetry install
 
 ### Data extraction
 
-To run extractor github oauth have been used.
-Specify your token into the .env file after running the command below.
+To run the extractor script, github oauth have been used.
+Specify your personal token in the .env file after running the command below.
 ```shell
 $ copy .env.example .env
 ```
