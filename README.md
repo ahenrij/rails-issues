@@ -21,5 +21,5 @@ $ copy .env.example .env
 Run the data extraction script with this command.
 It outputs raw.pickle file in the data directory
 ```shell
-$ poetry run src/extract.py
+$ poetry run python src/extract.py
 ```
