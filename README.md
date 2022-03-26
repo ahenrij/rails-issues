@@ -36,3 +36,16 @@ $ poetry run python src/transform.py
 ### Analysis
 The analysis code and results are in the `notebook.ipynb` file.
 You will need [Jupyter](https://jupyter.org/) to run it or your can use [Google Colab](https://colab.research.google.com/).
+
+If using vscode simply specify the virtual environment created by Poetry and run the notebook.
+
+Otherwise, you might need to install the dependencies properly. Export them to a `requirements.txt` file using the command below:
+```shell
+poetry export -f requirements.txt --output requirements.txt
+```
+
+Then install them in your notebook environment using a cell to run the following command:
+```notebook
+!pip install requirements.txt
+```
+Notice the `!` at the beginning, used to run OS command in notebook cells.
