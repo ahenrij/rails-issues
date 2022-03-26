@@ -2,8 +2,10 @@
 [tool.poetry]
 name = "rails-issues-analysis"
 version = "0.1.0"
-description = ""
+description = "Rails Issues Analysis"
 authors = ["Henri Aïdasso <ahenrij@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -12,7 +14,7 @@ matplotlib = "^3.5.1"
 requests = "2.20.1"
 pandas = "^1.4.1"
 numpy = "^1.22.3"
-python-dotenv = "^0.20.0"
+pydantic = {extras = ["dotenv"], version = "^1.8.2"}
 
 [tool.poetry.dev-dependencies]
 

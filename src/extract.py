@@ -1,18 +1,14 @@
 """Issues data extractor."""
 
-import os
 import time
 import http
 import math
 import json
-import dotenv
 import pickle
 import requests
+from src.core.config import settings
 
 
-dotenv.load_dotenv()
-
-GITHUB_OAUTH_TOKEN = os.getenv('token')
 EXPORT_FILE_PATH = 'data/raw.pickle'
 BASE_URL = "https://api.github.com"
 RESULTS_PER_PAGE = 100 # max value allowed
@@ -34,7 +30,7 @@ def extract(owner:str="rails", repo:str="rails", nb:int=500) -> list:
     url = f"{BASE_URL}/repos/{owner}/{repo}/issues"
     headers = {
         'Accept': 'application/vnd.github.v3+json',
-        'Authorization': f'token {GITHUB_OAUTH_TOKEN}'
+        'Authorization': f'token {settings.GITHUB_OAUTH_TOKEN}'
     }
     # nb of pages to request
     pages = math.ceil(nb/RESULTS_PER_PAGE)
