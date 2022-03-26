@@ -4,6 +4,7 @@ Analysis of the evolution of issues on the Rails project
 ### Requirements
 - python 3.8
 - [Poetry](https://python-poetry.org/)
+- [Jupyter](https://jupyter.org/) | [Google Colab](https://colab.research.google.com/)
 
 ### Install dependencies
 ```shell
@@ -19,7 +20,19 @@ $ copy .env.example .env
 ```
 
 Run the data extraction script with this command.
-It outputs raw.pickle file in the data directory
+It outputs raw.pickle by default file in the data directory
 ```shell
 $ poetry run python src/extract.py
 ```
+
+### Data transformation
+
+Run the data transformation script with this command.
+It outputs data.pickle by default file in the data directory
+```shell
+$ poetry run python src/transform.py
+```
+
+### Analysis
+The analysis code and results are in the notebook file.
+You will need [Jupyter Notebook](https://jupyter.org/) to run it or your can [Google Colab](https://colab.research.google.com/).
