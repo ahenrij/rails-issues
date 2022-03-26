@@ -7,10 +7,11 @@ authors = ["Henri Aïdasso <ahenrij@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-pandas = "numpy"
 seaborn = "^0.11.2"
 matplotlib = "^3.5.1"
-requests = "^2.27.1"
+requests = "2.20.1"
+pandas = "^1.4.1"
+numpy = "^1.22.3"
 
 [tool.poetry.dev-dependencies]
 

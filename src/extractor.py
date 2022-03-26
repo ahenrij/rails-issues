@@ -2,6 +2,7 @@
 
 import requests
 import pickle
+import time
 import http
 import math
 import json
@@ -25,7 +26,9 @@ def extract(owner:str="rails", repo:str="rails", nb:int=500) -> list:
         (list): List of JSON representation of the latest `limit` issues on `owner`/`rails` project.
     """
     url = f"{BASE_URL}/repos/{owner}/{repo}/issues"
-    headers = {'accept': 'application/vnd.github.v3+json'}
+    headers = {
+        'accept': 'application/vnd.github.v3+json'
+    }
     # nb of pages to request
     pages = math.ceil(nb/RESULTS_PER_PAGE)
     # results array.
@@ -36,9 +39,11 @@ def extract(owner:str="rails", repo:str="rails", nb:int=500) -> list:
             'per_page': RESULTS_PER_PAGE,
             'page': page
         }
+        time.sleep(1)
         result = requests.get(url, headers=headers, data=json.dumps(query))
         # raise exception on result error
         if result.status_code != http.HTTPStatus.OK:
+            print(result.text)
             result.raise_for_status()
         # concatenate response content to issues
         issues += json.loads(result.text)
