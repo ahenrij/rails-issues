@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     BASE_URL: str
     GITHUB_OAUTH_TOKEN: str
     RAW_DATA_FILE_PATH: str
+    DATA_FILE_PATH: str
 
     class Config:
         """Settings configs."""
