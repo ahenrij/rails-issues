@@ -9,8 +9,6 @@ import requests
 from src.core.config import settings
 
 
-EXPORT_FILE_PATH = 'data/raw.pickle'
-BASE_URL = "https://api.github.com"
 RESULTS_PER_PAGE = 100 # max value allowed
 
 
@@ -27,7 +25,7 @@ def extract(owner:str="rails", repo:str="rails", nb:int=500) -> list:
     =======
         (list): List of JSON representation of the latest `limit` issues on `owner`/`rails` project.
     """
-    url = f"{BASE_URL}/repos/{owner}/{repo}/issues"
+    url = f"{settings.BASE_URL}/repos/{owner}/{repo}/issues"
     headers = {
         'Accept': 'application/vnd.github.v3+json',
         'Authorization': f'token {settings.GITHUB_OAUTH_TOKEN}'
@@ -53,7 +51,7 @@ def extract(owner:str="rails", repo:str="rails", nb:int=500) -> list:
         print(f"Downloaded {len(res)} on page {page}")
         issues += res
     
-    with open(EXPORT_FILE_PATH, 'wb') as f:
+    with open(settings.RAW_DATA_FILE_PATH, 'wb') as f:
         pickle.dump(issues, f, protocol=pickle.HIGHEST_PROTOCOL)
     print('Done!')
     return issues
