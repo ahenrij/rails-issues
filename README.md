@@ -34,5 +34,5 @@ $ poetry run python src/transform.py
 ```
 
 ### Analysis
-The analysis code and results are in the notebook file.
+The analysis code and results are in the `notebook.ipynb` file.
 You will need [Jupyter Notebook](https://jupyter.org/) to run it or your can [Google Colab](https://colab.research.google.com/).
