@@ -54,7 +54,7 @@ def extract(owner:str="rails", repo:str="rails", nb:int=500) -> list:
             result.raise_for_status()
         # concatenate response content to issues
         res = json.loads(result.text)
-        print(f"Downloaded {len(res)} on turn {page}")
+        print(f"Downloaded {len(res)} on page {page}")
         issues += res
     
     with open(EXPORT_FILE_PATH, 'wb') as f:
@@ -64,4 +64,4 @@ def extract(owner:str="rails", repo:str="rails", nb:int=500) -> list:
 
 
 if __name__ == '__main__':
-    extract(nb=600)
+    extract()
