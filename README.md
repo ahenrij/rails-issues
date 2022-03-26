@@ -18,8 +18,8 @@ Specify your personal token in the .env file after running the command below.
 $ copy .env.example .env
 ```
 
-Run data extractor with this command.
+Run the data extraction script with this command.
 It outputs raw.pickle file in the data directory
 ```shell
-$ poetry run src/extractor.py
+$ poetry run src/extract.py
 ```
