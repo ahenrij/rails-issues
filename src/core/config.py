@@ -13,6 +13,7 @@ class Settings(BaseSettings):
         ValueError: if something is wrong with .env file
     """
 
+    BASE_URL: str
     GITHUB_OAUTH_TOKEN: str
     RAW_DATA_FILE_PATH: str
 
