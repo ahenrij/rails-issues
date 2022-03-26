@@ -11,7 +11,7 @@ def transform():
     issues: List[Dict] = []
     #Read raw data
     with open(settings.RAW_DATA_FILE_PATH, 'rb') as f:
-        raw_issues: List[Dict] = f.read()
+        raw_issues: List[Dict] = pickle.load(f)
 
     for raw_issue in raw_issues:
         # flatten labels as list of str instead of list of dict
@@ -34,7 +34,10 @@ def transform():
         issues.append(issue)
 
     # saved transformed data
-    with open(settings.RAW_DATA_FILE_PATH, 'wb') as f:
+    with open(settings.DATA_FILE_PATH, 'wb') as f:
         pickle.dump(issues, f, protocol=pickle.HIGHEST_PROTOCOL)
     print('Done!')
     return issues
+
+if __name__ == '__main__':
+    transform()
