@@ -9,6 +9,7 @@ import dotenv
 import pickle
 import requests
 
+
 dotenv.load_dotenv()
 
 GITHUB_OAUTH_TOKEN = os.getenv('token')
@@ -58,6 +59,7 @@ def extract(owner:str="rails", repo:str="rails", nb:int=500) -> list:
     
     with open(EXPORT_FILE_PATH, 'wb') as f:
         pickle.dump(issues, f, protocol=pickle.HIGHEST_PROTOCOL)
+    print('Done!')
     return issues
 
 
