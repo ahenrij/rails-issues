@@ -1,6 +1,10 @@
 # rails-issues-analysis
 Analysis of the evolution of issues on the Rails project
 
+### Study report
+
+The report of this analysis can be found [here](https://docs.google.com/document/d/1yP2j6qJUk6XB9yMIlQGAsoiYv1sH28dIS_ICv7PoB7Q/edit?usp=sharing)
+
 ### Requirements
 - python 3.8
 - [Poetry](https://python-poetry.org/)
